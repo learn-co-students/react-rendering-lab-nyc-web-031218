@@ -6,9 +6,25 @@ class Rating extends React.Component {
     super(props);
 
     this.state = {
+      rating: 0,
       increasing: false,
       decreasing: false
     };
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.rating === prevState.rating) {
+      return {
+        rating: nextProps.rating,
+        increasing: false,
+        decreasing: false
+      }
+    }
+    return {
+      rating: nextProps.rating,
+      increasing: nextProps.rating > prevState.rating,
+      decreasing: nextProps.rating < prevState.rating
+    }
   }
 
   render() {
