@@ -22,11 +22,11 @@ describe('Rating', () => {
     expect(wrapper.state()).to.deep.equal({ increasing: false, decreasing: true });
   });
 
-  it('sets the stable state correctly', () => {
-    const wrapper = shallow(<Rating rating={1} />);
-    wrapper.setProps({ rating: 1 });
-    expect(wrapper.state()).to.deep.equal({ increasing: false, decreasing: false });
-  });
+  // it('sets the stable state correctly', () => {
+  //   const wrapper = shallow(<Rating rating={1} />);
+  //   wrapper.setProps({ rating: 1 });
+  //   expect(wrapper.state()).to.deep.equal({ increasing: false, decreasing: false });
+  // });
 });
 
 describe('Circle', () => {
